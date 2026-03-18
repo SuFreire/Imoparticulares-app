@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>ImóvelDireto – compra direta · sem comissões | Venda rápida e transparente</title>
+    <meta name="description" content="Compramos o seu imóvel diretamente em Sintra, Oeiras, Amadora, Odivelas ou Loures. Proposta em 48h, 0% comissões, pagamento rápido. Sem burocracia.">
+    <!-- Inter font + ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* -------------------------------
+           VARIÁVEIS E RESET
+        ------------------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0b6e70;
+            --primary-dark: #095557;
+            --primary-soft: #1f494e;
+            --accent: #eab354;
+            --accent-dark: #d89f3a;
+            --gray-light: #e9eff2;
+            --section-bg: #eef3f5;
+            --card-bg: #ffffff;
+            --text-dark: #14262e;
+            --text-soft: #2f4553;
+            --border-light: #dae6ea;
+            --shadow-sm: 0 8px 18px rgba(0,0,0,0.02);
+            --shadow-md: 0 15px 25px -8px rgba(0,0,0,0.02);
+            --shadow-lg: 0 25px 35px -8px rgba(11,110,112,0.08);
+            --radius-lg: 48px;
+            --radius-md: 28px;
+            --radius-sm: 40px;
+            --radius-xs: 50px;
+            --investor-gold: #c9a959;
+            --investor-dark: #1a2c35;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fa;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* -------------------------------
+           TIPOGRAFIA
+        ------------------------------- */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 2.9rem;
+            line-height: 1.1;
+            color: var(--text-dark);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* -------------------------------
+           BOTÕES
+        ------------------------------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .btn i {
+            font-size: 0.95rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 8px 16px rgba(9, 85, 87, 0.15);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 24px rgba(9, 85, 87, 0.25);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-dark);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .btn-gold {
+            background: var(--accent);
+            color: #1e2f35;
+            box-shadow: 0 4px 12px rgba(234, 179, 84, 0.25);
+        }
+        .btn-gold:hover {
+            background: var(--accent-dark);
+            color: #1a2c30;
+            transform: translateY(-2px);
+        }
+        .btn-dark {
+            background: var(--primary-soft);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .btn-dark:hover {
+            background: #163b3f;
+            transform: translateY(-2px);
+        }
+        
+        /* NOVO: Botão para investidores */
+        .btn-investor {
+            background: linear-gradient(145deg, #2c3e4f, #1a2c35);
+            color: #ffd966;
+            border: 1px solid rgba(255,215,0,0.3);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .btn-investor:hover {
+            background: #1e333d;
+            color: #ffeb99;
+            border-color: #ffd966;
+            transform: translateY(-3px);
+        }
+        
+        .btn-investor-gold {
+            background: #c9a959;
+            color: #0a1a1f;
+            font-weight: 700;
+        }
+        .btn-investor-gold:hover {
+            background: #dbb86b;
+            color: #000;
+        }
+
+        /* -------------------------------
+           NAVBAR
+        ------------------------------- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.03em;
+        }
+        .logo span {
+            color: #1f3e44;
+            font-weight: 350;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #1e3b44;
+            font-weight: 600;
+            font-size: 0.96rem;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            border-bottom-color: var(--primary);
+        }
+        
+        /* NOVO: Badge para investidores */
+        .investor-badge {
+            background: #ffd966;
+            color: #1a2c35;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            border: 1px solid #b49450;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+
+        /* -------------------------------
+           HERO SECTION
+        ------------------------------- */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(145deg, #f6fbfc, #e5edf0);
+            border-radius: var(--radius-lg);
+            padding: 2.8rem 2.8rem;
+            margin: 1.5rem 0 3rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(11,110,112,0.08);
+        }
+        .hero-text {
+            flex: 1 1 50%;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #2c4a57;
+            margin: 1.5rem 0 1.8rem;
+            max-width: 90%;
+            font-weight: 400;
+        }
+        
+        .highlights-row {
+            display: flex;
+            gap: 1.2rem;
+            margin: 1.5rem 0 1.8rem;
+            flex-wrap: wrap;
+        }
+        
+        .highlight-card {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            border-radius: 24px;
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+            border: 1px solid rgba(11,110,112,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 24px rgba(11,110,112,0.12);
+            border-color: var(--primary);
+        }
+        
+        .highlight-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            background: rgba(11,110,112,0.1);
+            padding: 0.8rem;
+            border-radius: 50%;
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .highlight-content {
+            flex: 1;
+        }
+        
+        .highlight-content h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--text-soft);
+            margin-bottom: 0.3rem;
+        }
+        
+        .highlight-content .highlight-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+        
+        .highlight-content .highlight-desc {
+            font-size: 0.85rem;
+            color: #4d6a75;
+        }
+        
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.8rem 0 1rem;
+        }
+        .badge {
+            background: var(--primary-soft);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .hero-stats {
+            background: white;
+            border-radius: 36px;
+            padding: 2.4rem;
+            flex: 1 1 38%;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #dbe8eb;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+        .stat-item .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #3d6370;
+            font-weight: 600;
+        }
+        .hero-stats-footer {
+            margin-top: 1.8rem;
+            background: #e5f1f2;
+            padding: 0.8rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #0a5257;
+            text-align: center;
+        }
+
+        /* -------------------------------
+           DESTAQUE MUDANÇA (DUAL)
+        ------------------------------- */
+        .highlights-dual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        
+        .highlight-card-large {
+            background: linear-gradient(105deg, #0b6e70 0%, #0f5b5e 100%);
+            color: white;
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 18px 30px -6px rgba(11,110,112,0.35);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight-card-large:hover {
+            transform: translateY(-4px);
+        }
+        
+        .highlight-card-large i {
+            font-size: 2.5rem;
+            color: #ffd98c;
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 50%;
+            width: 4.5rem;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .highlight-card-large .highlight-text {
+            flex: 1;
+            font-weight: 500;
+            font-size: 1.15rem;
+        }
+        
+        .badge-pais {
+            background: rgba(255,255,255,0.2);
+            padding: 0.2rem 0.9rem;
+            border-radius: 50px;
+            margin-left: 0.6rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* -------------------------------
+           CARDS – GRIDS
+        ------------------------------- */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+        .card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 2rem 1.6rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 18px 30px -6px rgba(11,110,112,0.12);
+        }
+        .card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.3rem;
+        }
+        .card p {
+            color: #3e5b66;
+            font-size: 0.95rem;
+        }
+        .price-tag {
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: #e5f1f2;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 0.8rem;
+        }
+
+        /* -------------------------------
+           SEÇÃO DARK
+        ------------------------------- */
+        .section-dark {
+            background: var(--section-bg);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.5rem;
+            margin: 4rem 0;
+        }
+
+        /* -------------------------------
+           COMPARAÇÃO – TABELA
+        ------------------------------- */
+        .comparison-section {
+            margin: 2.5rem 0;
+        }
+        .comparison-table-wrapper {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 2.5rem 2.5rem;
+            border: 1px solid #cadce0;
+            box-shadow: var(--shadow-md);
+            overflow-x: auto;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 900px;
+        }
+        .comparison-table th {
+            text-align: left;
+            padding: 1rem 0.8rem;
+            background: #f2f8f9;
+            color: #0a3a3f;
+            font-weight: 700;
+            border-bottom: 3px solid var(--primary-soft);
+        }
+        .comparison-table td {
+            padding: 1rem 0.8rem;
+            border-bottom: 1px solid #dfeaed;
+            vertical-align: top;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table .highlight-col {
+            background: rgba(11,110,112,0.04);
+            border-left: 3px solid var(--primary);
+            border-right: 3px solid var(--primary);
+            font-weight: 600;
+        }
+        .star-badge {
+            background: var(--accent);
+            color: #1e2f35;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+        }
+        .comparison-footer {
+            margin-top: 2.5rem;
+            background: var(--primary-soft);
+            padding: 1.2rem 1.8rem;
+            border-radius: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            flex-wrap: wrap;
+        }
+        .economia-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+        }
+
+        /* -------------------------------
+           SEÇÃO INVESTIDORES (NOVA)
+        ------------------------------- */
+        .investor-section {
+            background: linear-gradient(145deg, #1e3b44, #0f262e);
+            border-radius: var(--radius-lg);
+            padding: 4rem;
+            margin: 5rem 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,215,0,0.2);
+        }
+        
+        .investor-section::before {
+            content: "💎";
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 12rem;
+            opacity: 0.05;
+            transform: rotate(15deg);
+        }
+        
+        .investor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .investor-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .investor-benefit-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .investor-benefit-item i {
+            font-size: 2rem;
+            color: #ffd966;
+            width: 3rem;
+        }
+        
+        .investor-benefit-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: white;
+        }
+        
+        .investor-benefit-item p {
+            color: #bcd3d9;
+        }
+        
+        .investor-pricing {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255,215,0,0.2);
+        }
+        
+        .price-tag-investor {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffd966;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-tag-investor small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #9bb7c0;
+        }
+        
+        .investor-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .investor-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .investor-features li i {
+            color: #ffd966;
+            width: 1.5rem;
+        }
+        
+        .investor-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .money-back {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+        }
+
+        /* -------------------------------
+           MODAL DE LOGIN/REGISTO INVESTIDOR
+        ------------------------------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 40px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.2s;
+        }
+        
+        .modal-close:hover {
+            color: var(--primary);
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-header i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .modal-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-header p {
+            color: #666;
+        }
+        
+        .modal-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: #f0f5f7;
+            padding: 0.5rem;
+            border-radius: 60px;
+        }
+        
+        .modal-tab {
+            flex: 1;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .modal-tab.active {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            color: var(--primary);
+        }
+        
+        .modal-form {
+            display: none;
+        }
+        
+        .modal-form.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a2c35;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #d7e4e8;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        .payment-info {
+            background: #eef7f9;
+            padding: 1.5rem;
+            border-radius: 24px;
+            margin: 1.5rem 0;
+        }
+        
+        .payment-info .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .payment-methods i {
+            font-size: 2.5rem;
+            color: #1f3e44;
+        }
+
+        /* -------------------------------
+           FORMULÁRIO
+        ------------------------------- */
+        .form-section {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 2.8rem;
+            box-shadow: 0 20px 30px -6px rgba(29, 53, 61, 0.06);
+            border: 1px solid #cbdce0;
+            margin-bottom: 2rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem 2rem;
+        }
+        .full-width {
+            grid-column: span 2;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #0a3e47;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.9rem 1.4rem;
+            border: 2px solid #d7e4e8;
+            border-radius: 50px;
+            background: #fafdfd;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: 0.15s;
+            width: 100%;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            background: white;
+            outline: none;
+        }
+        .file-upload-area {
+            border: 2px dashed #89b3b9;
+            background: #f2fafb;
+            border-radius: 50px;
+            padding: 0.9rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #0a5257;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .file-upload-area:hover {
+            background: #e2f0f2;
+        }
+        #file-name {
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+            margin-left: 0.5rem;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-top: 0.2rem;
+            accent-color: var(--primary);
+        }
+        hr {
+            border: 1px solid #cde1e5;
+            width: 100%;
+        }
+
+        /* -------------------------------
+           FOOTER ATUALIZADO
+        ------------------------------- */
+        .footer {
+            margin-top: 6rem;
+            background: #0f262e;
+            color: #cee2e6;
+            border-radius: 64px 64px 0 0;
+            padding: 3.8rem 2.8rem 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr 0.9fr 1.3fr;
+            gap: 2.2rem;
+        }
+        .footer-logo {
+            color: white;
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+        .footer-logo span {
+            color: #8eb5bc;
+        }
+        .footer-contact i {
+            margin-right: 0.8rem;
+            color: #63a5ab;
+        }
+        .footer-links a {
+            display: block;
+            color: #bdd7dd;
+            margin: 0.7rem 0;
+            font-weight: 400;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .footer-cta-box {
+            background: #1c3e46;
+            border-radius: 32px;
+            padding: 1.8rem;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 3.5rem;
+            color: #7a9fa6;
+            border-top: 1px solid #254c55;
+            padding-top: 2rem;
+        }
+
+        /* -------------------------------
+           WATERMARK
+        ------------------------------- */
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-dark);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+            z-index: 99;
+            border: 1px solid rgba(255,255,255,0.2);
+            pointer-events: none;
+        }
+
+        /* -------------------------------
+           RESPONSIVIDADE
+        ------------------------------- */
+        @media (max-width: 1000px) {
+            .highlights-row {
+                flex-direction: column;
+            }
+            .highlights-dual {
+                grid-template-columns: 1fr;
+            }
+            .investor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .container { padding: 0 1.5rem; }
+            .hero { flex-direction: column; padding: 2rem; }
+            .hero-text p { max-width: 100%; }
+            .hero-stats { width: 100%; margin-top: 2rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .comparison-footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .investor-section { padding: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .hero-stats { padding: 1.8rem; }
+            .comparison-table-wrapper { padding: 1.5rem; }
+            .form-section { padding: 1.8rem; }
+            .highlight-card-large { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- NAVBAR ATUALIZADA -->
+        <nav class="navbar" aria-label="Menu principal">
+            <div class="logo">Imóvel<span>Direto</span></div>
+            <div class="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="#vantagens">Vantagens</a>
+                <a href="#situacoes">Situações</a>
+                <a href="#atuacao">Áreas</a>
+                <a href="#formulario">Formulário</a>
+                <a href="#formulario" class="btn btn-outline" style="padding:0.5rem 1.8rem;"><i class="fas fa-euro-sign"></i> Vender</a>
+                <!-- NOVO: Botão investidores -->
+                <a href="#" class="btn btn-investor" id="investorBtn" style="padding:0.5rem 1.8rem;">
+                    <i class="fas fa-chart-line"></i> Investidores 
+                    <span class="investor-badge">💰 Fee</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <article class="hero-text">
+                <h1 id="hero-title">Compramos o Seu Imóvel<br><span style="color: var(--primary);">Diretamente</span></h1>
+                <p>Precisa de liquidez rápida? Venda com a ImóvelDireto — compramos o seu imóvel em Sintra, Oeiras, Amadora, Odivelas ou Loures. Sem comissões, sem esperas, processo transparente.</p>
+                
+                <div class="highlights-row">
+                    <div class="highlight-card">
+                        <i class="fas fa-gavel"></i>
+                        <div class="highlight-content">
+                            <h4>Apoio Jurídico</h4>
+                            <div class="highlight-value">Grátis</div>
+                            <div class="highlight-desc">Pagamento só após conclusão</div>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-truck-moving"></i>
+                        <div class="highlight-content">
+                            <h4>Mudança</h4>
+                            <div class="highlight-value">Oferta</div>
+                            <div class="highlight-desc">Para qualquer zona do país</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badge-group">
+                    <span class="badge"><i class="fas fa-hand-holding-usd"></i> 0% Comissões</span>
+                    <span class="badge"><i class="fas fa-bolt"></i> Pagamento Rápido</span>
+                    <span class="badge"><i class="fas fa-clock"></i> Propostas em 48h</span>
+                </div>
+                <a href="#formulario" class="btn btn-primary" aria-label="Calcular poupança"><i class="fas fa-calculator"></i> Veja quanto poupa</a>
+            </article>
+            <aside class="hero-stats">
+                <div class="stat-grid">
+                    <div class="stat-item"><span class="stat-number">0%</span><span class="stat-label">Comissões</span></div>
+                    <div class="stat-item"><span class="stat-number">48h</span><span class="stat-label">Proposta garantida</span></div>
+                    <div class="stat-item"><span class="stat-number">6%</span><span class="stat-label">Poupe vs outros</span></div>
+                    <div class="stat-item"><span class="stat-number">80%</span><span class="stat-label">Mais rápido</span></div>
+                </div>
+                <div class="hero-stats-footer">
+                    <i class="fas fa-shield-alt"></i> Sem intermediários • Sem esperas • Sem surpresas
+                </div>
+            </aside>
+        </section>
+
+        <!-- NOVA SEÇÃO: ÁREA DE INVESTIDORES (DESTAQUE) -->
+        <section class="investor-section" id="investor-area">
+            <div class="investor-grid">
+                <div>
+                    <span style="background: rgba(255,215,0,0.2); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem; color: #ffd966; display: inline-block; margin-bottom: 1rem;">⚡ EXCLUSIVO INVESTIDORES</span>
+                    <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1.5rem;">Compre imóveis <span style="color: #ffd966;">abaixo do mercado</span></h2>
+                    <p style="font-size: 1.2rem; color: #bcd3d9; margin-bottom: 2rem;">Acesso prioritário a vendedores urgentes. Pague uma única fee e receba contactos exclusivos de particulares a vender diretamente.</p>
+                    
+                    <div class="investor-benefits">
+                        <div class="investor-benefit-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Acesso antecipado a leads</h4>
+                                <p>Receba contactos 48h antes do mercado geral</p>
+                            </div>
+                        </div>
+                        <div class="investor-benefit-item">
+                            <i class="fas fa-percent"></i>
+                            <div>
+                                <h4>Sem comissões imobiliárias</h4>
+                                <p>Negocie diretamente com o proprietário</p>
+                            </div>
+                        </div>
+                        <div class="investor-benefit-item">
+                            <i class="fas fa-file-contract"></i>
+                            <div>
+                                <h4>Due diligence inclusa</h4>
+                                <p>Documentação verificada pela nossa equipa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="investor-pricing">
+                    <div style="text-align: center;">
+                        <div class="price-tag-investor">€97 <small>/mês</small></div>
+                        <p style="color: #ffd966; font-weight: 600;">ou €997/ano (poupe 2 meses)</p>
+                    </div>
+                    
+                    <ul class="investor-features">
+                        <li><i class="fas fa-check-circle"></i> <strong>10 leads exclusivas/mês</strong> (mínimo garantido)</li>
+                        <li><i class="fas fa-check-circle"></i> Contacto direto do proprietário</li>
+                        <li><i class="fas fa-check-circle"></i> Filtros por zona, preço e tipologia</li>
+                        <li><i class="fas fa-check-circle"></i> Alertas em tempo real</li>
+                        <li><i class="fas fa-check-circle"></i> Histórico de negociações</li>
+                        <li><i class="fas fa-check-circle"></i> Suporte jurídico prioritário</li>
+                    </ul>
+                    
+                    <div class="investor-cta">
+                        <button class="btn btn-investor-gold" style="width: 100%; padding: 1.2rem;" id="investorRegisterBtn">
+                            <i class="fas fa-crown"></i> Ativar Acesso Investidor
+                        </button>
+                        <p class="money-back"><i class="fas fa-shield-alt"></i> 7 dias de garantia ou devolvemos o seu dinheiro</p>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-user-tie" style="font-size: 1.5rem; color: #ffd966;"></i>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem;">127 investidores ativos</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <i class="fas fa-handshake" style="font-size: 1.5rem; color: #ffd966;"></i>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem;">43 negócios fechados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SITUAÇÕES QUE ATENDEMOS -->
+        <section id="situacoes" class="section-dark" aria-labelledby="situacoes-title">
+            <h2 id="situacoes-title" style="color: #0a3036;">Situações que Atendemos</h2>
+            <p style="font-size: 1.2rem; color: #1b464e; margin-bottom: 2rem;">Compramos em qualquer situação — proposta justa em 24 horas.</p>
+            
+            <!-- CARDS DE SITUAÇÕES -->
+            <div class="grid-4" style="margin-top: 2rem;">
+                <article class="card"><i class="fas fa-gavel"></i><h3>Penhoras Judiciais</h3><p>Compramos imóveis em execução fiscal ou judicial. Evite o leilão e obtenha mais valor.</p></article>
+                <article class="card"><i class="fas fa-tree"></i><h3>Heranças</h3><p>Herdou um imóvel inteiro? Compramos propriedades completas já partilhadas entre herdeiros.</p></article>
+                <article class="card"><i class="fas fa-heart-broken"></i><h3>Processos de Divórcio</h3><p>Precisa de partilhar o imóvel? Proposta justa para ambas as partes.</p></article>
+                <article class="card"><i class="fas fa-clock"></i><h3>Venda Urgente</h3><p>Dinheiro rápido, qualquer estado de conservação, sem obras necessárias.</p></article>
+                <article class="card"><i class="fas fa-globe"></i><h3>Emigrantes</h3><p>Vive no estrangeiro? Tratamos de tudo à distância, total segurança.</p></article>
+                <article class="card"><i class="fas fa-credit-card"></i><h3>Dívidas Bancárias</h3><p>Dificuldade para pagar crédito? Compramos e ajudamos a regularizar.</p></article>
+                <article class="card"><i class="fas fa-home"></i><h3>Venda Direta</h3><p>100% do valor, sem comissões. Processo transparente.</p></article>
+                <article class="card"><i class="fas fa-file-signature"></i><h3>Penhoras / Execuções</h3><p>Imóveis em tribunal – proposta rápida e justa.</p></article>
+            </div>
+
+            <!-- DESTAQUES DUPLOS -->
+            <div class="highlights-dual">
+                <article class="highlight-card-large">
+                    <i class="fas fa-gavel" aria-hidden="true"></i>
+                    <div class="highlight-text">
+                        <strong style="font-size: 1.3rem; display: block; margin-bottom: 0.3rem;">Apoio Jurídico Inclusivo</strong>
+                        Parceiros jurídicos de confiança, com pagamento apenas após a conclusão do negócio.
+                    </div>
+                </article>
+                
+                <article class="highlight-card-large">
+                    <i class="fas fa-truck-moving" aria-hidden="true"></i>
+                    <div class="highlight-text">
+                        <strong style="font-size: 1.3rem; display: block; margin-bottom: 0.3rem;">Mudança Oferecida</strong>
+                        Se a mudança é um problema, temos a solução: oferecemos para qualquer zona do país 
+                        <span class="badge-pais">Portugal Continental</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SEÇÃO COMPARAÇÃO -->
+        <section id="vantagens" class="comparison-section" aria-labelledby="comparacao-title">
+            <h2 id="comparacao-title">Comparação Transparente</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #1f4a54;">Veja a diferença clara entre vender‑nos e outros canais.</p>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <caption style="caption-side: bottom; margin-top: 0.5rem; font-size: 0.8rem; color: #3e5b66;">Comparação detalhada entre canais de venda</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Agência Imobiliária</th>
+                            <th scope="col">Tribunal / Leilão</th>
+                            <th scope="col">Advogado / Herança</th>
+                            <th scope="col">Plataformas Online</th>
+                            <th scope="col" class="highlight-col"><span class="star-badge">⭐ Melhor</span><br>Venda Direta ImóvelDireto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Comissão que paga</th>
+                            <td>5% a 6%</td>
+                            <td>Taxa judicial ~5%</td>
+                            <td>Honorários 3–10%</td>
+                            <td>Listagem paga</td>
+                            <td class="highlight-col"><strong style="color: #0b6e70;">0%</strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tempo até receber o dinheiro</th>
+                            <td>3 a 6 meses</td>
+                            <td>6 a 18 meses</td>
+                            <td>6 a 24 meses</td>
+                            <td>2 a 6 meses</td>
+                            <td class="highlight-col"><strong style="color: #0b6e70;">2 a 4 semanas</strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Proposta garantida</th>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td class="highlight-col"><i class="fas fa-check-circle"></i> Sim</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Negociação direta com comprador</th>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td class="highlight-col"><i class="fas fa-check-circle"></i> Sim</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Custos ocultos ou taxas extras</th>
+                            <td><i class="fas fa-check-circle"></i> Sim</td>
+                            <td><i class="fas fa-check-circle"></i> Sim</td>
+                            <td><i class="fas fa-check-circle"></i> Sim</td>
+                            <td><i class="fas fa-check-circle"></i> Sim</td>
+                            <td class="highlight-col"><i class="fas fa-times-circle"></i> Não</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Apoio jurídico incluído</th>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-check-circle"></i> Sim (pago)</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td class="highlight-col"><i class="fas fa-check-circle"></i> Sim, gratuito</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Avaliação gratuita imóvel</th>
+                            <td><i class="fas fa-check-circle"></i> Sim</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-check-circle"></i> Sim</td>
+                            <td class="highlight-col"><i class="fas fa-check-circle"></i> Sim, gratuita</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Compra independente do estado</th>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td><i class="fas fa-times-circle"></i> Não</td>
+                            <td class="highlight-col"><i class="fas fa-check-circle"></i> Sim</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="comparison-footer">
+                    <span style="font-weight: 700; font-size: 1.1rem;"><i class="fas fa-piggy-bank" style="margin-right: 0.6rem;"></i> 💰 Poupe até 6% + Receba 80% mais rápido</span>
+                    <span class="economia-badge">Sem comissões • Sem esperas • Proposta em 48h</span>
+                    <a href="#formulario" class="btn btn-gold" style="margin-top: 0.5rem;"><i class="fas fa-file-signature"></i> Receber Proposta</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO ÁREAS DE ATUAÇÃO -->
+        <section id="atuacao" style="margin: 4rem 0 1rem;" aria-labelledby="areas-title">
+            <h2 id="areas-title">Áreas de Atuação</h2>
+            <p style="margin-bottom: 2rem;">Zonas onde operamos — Grande Lisboa, qualquer estado de conservação.</p>
+            <div class="grid-4">
+                <article class="card"><i class="fas fa-map-marker-alt"></i><h3>Sintra</h3><div class="price-tag">Desde 1.200€/m²</div><p>Colares, Mem Martins, Queluz, Cacém, Rio de Mouro</p></article>
+                <article class="card"><i class="fas fa-map-marker-alt"></i><h3>Oeiras</h3><div class="price-tag">Desde 2.100€/m²</div><p>Algés, Paço de Arcos, Carnaxide, Linda-a-Velha</p></article>
+                <article class="card"><i class="fas fa-map-marker-alt"></i><h3>Amadora</h3><div class="price-tag">Desde 1.400€/m²</div><p>Reboleira, Damaia, Alfragide, Brandoa, Buraca</p></article>
+                <article class="card"><i class="fas fa-map-marker-alt"></i><h3>Odivelas</h3><div class="price-tag">Desde 1.500€/m²</div><p>Pontinha, Famões, Ramada, Caneças, Olival Basto</p></article>
+                <article class="card"><i class="fas fa-map-marker-alt"></i><h3>Loures</h3><div class="price-tag">Desde 1.300€/m²</div><p>Sacavém, Moscavide, Portela, Bobadela, Camarate</p></article>
+            </div>
+        </section>
+
+        <!-- SEÇÃO FORMULÁRIO -->
+        <section id="formulario" style="margin-top: 5rem;" aria-labelledby="form-title">
+            <h2 id="form-title">Receba uma Proposta</h2>
+            <p style="margin-bottom: 2rem;">Venda o seu imóvel agora. Preencha e receba uma proposta sem compromisso em 48h.</p>
+            
+            <div class="form-section">
+                <form action="#" method="post">
+                    <div class="form-grid">
+                        <!-- DADOS PROPRIETÁRIO -->
+                        <div class="form-group full-width">
+                            <label style="color: var(--primary);">Dados do Proprietário</label>
+                            <hr>
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" placeholder="Maria Silva" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="maria@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="+351 912 345 678" required>
+                        </div>
+                        
+                        <!-- INFORMAÇÕES DO IMÓVEL -->
+                        <div class="form-group full-width">
+                            <label style="color: var(--primary);">Informações do Imóvel</label>
+                            <hr>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo_imovel">Tipo de Imóvel *</label>
+                            <select id="tipo_imovel" name="tipo_imovel" required>
+                                <option value="">Selecione...</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="moradia">Moradia</option>
+                                <option value="terreno">Terreno</option>
+                                <option value="comercial">Comercial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="zona">Zona *</label>
+                            <select id="zona" name="zona" required>
+                                <option value="">Selecione...</option>
+                                <option value="sintra">Sintra</option>
+                                <option value="oeiras">Oeiras</option>
+                                <option value="amadora">Amadora</option>
+                                <option value="odivelas">Odivelas</option>
+                                <option value="loures">Loures</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="morada">Morada Completa do Imóvel</label>
+                            <input type="text" id="morada" name="morada" placeholder="Rua..., nº, Andar, Localidade, Código Postal">
+                        </div>
+                        <div class="form-group">
+                            <label for="area_bruta">Área Bruta (m²)</label>
+                            <input type="number" id="area_bruta" name="area_bruta" placeholder="85">
+                        </div>
+                        <div class="form-group">
+                            <label for="quartos">Nº de Quartos</label>
+                            <input type="number" id="quartos" name="quartos" placeholder="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="wc">Nº de WC</label>
+                            <input type="number" id="wc" name="wc" placeholder="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="conservacao">Estado de Conservação</label>
+                            <select id="conservacao" name="conservacao">
+                                <option value="">Selecione...</option>
+                                <option value="bom">Bom</option>
+                                <option value="medio">Médio</option>
+                                <option value="recuperar">Recuperar</option>
+                            </select>
+                        </div>
+                        
+                        <!-- DETALHES DA VENDA -->
+                        <div class="form-group full-width">
+                            <label style="color: var(--primary);">Detalhes da Venda</label>
+                            <hr>
+                        </div>
+                        <div class="form-group">
+                            <label for="motivo">Motivo da Venda</label>
+                            <select id="motivo" name="motivo">
+                                <option value="">Selecione...</option>
+                                <option value="urgente">Venda urgente</option>
+                                <option value="divorcio">Divórcio</option>
+                                <option value="heranca">Herança</option>
+                                <option value="emigrante">Emigrante</option>
+                                <option value="divida">Dívida bancária</option>
+                                <option value="mudanca">Mudança de país</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="valor">Valor Pretendido (€)</label>
+                            <input type="number" id="valor" name="valor" placeholder="150.000">
+                        </div>
+                        <div class="form-group">
+                            <label for="prazo">Prazo para Venda</label>
+                            <select id="prazo" name="prazo">
+                                <option value="">Selecione...</option>
+                                <option value="imediato">Imediato</option>
+                                <option value="3meses">Até 3 meses</option>
+                                <option value="6meses">Até 6 meses</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="situacao_legal">Situação Legal</label>
+                            <select id="situacao_legal" name="situacao_legal">
+                                <option value="">Selecione...</option>
+                                <option value="regular">Regular</option>
+                                <option value="penhora">Penhora</option>
+                                <option value="partilha">Partilha</option>
+                                <option value="oposicao">Oposição à venda</option>
+                            </select>
+                        </div>
+                        
+                        <!-- OBSERVAÇÕES -->
+                        <div class="form-group full-width">
+                            <label for="observacoes">Informações Adicionais</label>
+                            <textarea id="observacoes" name="observacoes" rows="2" placeholder="Observações: descreva qualquer informação adicional sobre o imóvel, condições especiais, história, etc..."></textarea>
+                        </div>
+                        
+                        <!-- UPLOAD FICHEIROS -->
+                        <div class="form-group full-width">
+                            <label>Anexar Documentação (opcional)</label>
+                            <div class="file-upload-area" id="file-upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span id="file-upload-text">Clique para selecionar ficheiros</span>
+                                <span id="file-name"></span>
+                                <input type="file" id="file-upload" name="documentos" multiple accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+                            </div>
+                            <span style="font-size: 0.8rem; color: #0f6c73;">PDF, JPG, PNG até 10MB</span>
+                        </div>
+                        
+                        <!-- PRIVACIDADE -->
+                        <div class="form-group full-width checkbox-group">
+                            <input type="checkbox" id="privacidade" name="privacidade" required>
+                            <label for="privacidade" style="font-weight: 400; text-transform: none;">Li e aceito a <a href="#" style="color: var(--primary);">Política de Privacidade</a> e autorizo o contacto para apresentação de proposta de compra do meu imóvel.</label>
+                        </div>
+                    </div>
+                    
+                    <!-- CHECKBOX EXTRA PARA INVESTIDORES (OPCIONAL) -->
+                    <div style="margin-top: 1rem; background: #f2f8f9; padding: 1rem; border-radius: 30px;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="investidor_interesse" name="investidor_interesse">
+                            <label for="investidor_interesse" style="font-weight: 400; text-transform: none;">✅ Também tenho interesse em <strong>receber contactos de investidores</strong> (podemos partilhar o seu anúncio na nossa rede exclusiva)</label>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2.5rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 1rem 3.5rem;"><i class="fas fa-file-signature"></i> Receber Proposta em 48h</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL DE REGISTO INVESTIDOR (NOVO) -->
+    <div class="modal-overlay" id="investorModal">
+        <div class="modal-content">
+            <div class="modal-close" id="closeModal">&times;</div>
+            
+            <div class="modal-header">
+                <i class="fas fa-crown" style="color: #c9a959;"></i>
+                <h2>Área Exclusiva Investidores</h2>
+                <p>Acesso prioritário a imóveis abaixo do mercado</p>
+            </div>
+            
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-tab="login">Entrar</div>
+                <div class="modal-tab" data-tab="register">Registar</div>
+            </div>
+            
+            <!-- Formulário Login -->
+            <div class="modal-form active" id="loginForm">
+                <form>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="investidor@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Palavra-passe</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Entrar</button>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                        <a href="#" style="color: var(--primary);">Esqueceu-se da password?</a>
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Formulário Registo com Pagamento -->
+            <div class="modal-form" id="registerForm">
+                <form>
+                    <div class="form-group">
+                        <label>Nome Completo *</label>
+                        <input type="text" placeholder="António Silva">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" placeholder="investidor@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone *</label>
+                        <input type="tel" placeholder="+351 912 345 678">
+                    </div>
+                    <div class="form-group">
+                        <label>Palavra-passe *</label>
+                        <input type="password" placeholder="Mínimo 8 caracteres">
+                    </div>
+                    
+                    <div class="payment-info">
+                        <p style="color: #666; margin-bottom: 0.5rem;">Plano selecionado:</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 700;">Acesso Investidor Premium</span>
+                            <span class="price">€97<span style="font-size: 0.9rem; color: #666;">/mês</span></span>
+                        </div>
+                        
+                        <div style="margin: 1rem 0;">
+                            <label style="display: block; margin-bottom: 0.5rem;">Método de Pagamento</label>
+                            <div class="payment-methods">
+                                <i class="fab fa-cc-visa" style="color: #1a1f71;"></i>
+                                <i class="fab fa-cc-mastercard" style="color: #eb001b;"></i>
+                                <i class="fab fa-cc-paypal" style="color: #003087;"></i>
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Nº do Cartão</label>
+                            <input type="text" placeholder="**** **** **** ****">
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <div class="form-group">
+                                <label>Validade</label>
+                                <input type="text" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="text" placeholder="***">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group" style="margin: 1.5rem 0;">
+                        <input type="checkbox" id="termos" checked>
+                        <label for="termos" style="font-weight: 400;">Concordo com os <a href="#" style="color: var(--primary);">Termos e Condições</a> e autorizo a cobrança mensal</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-investor-gold" style="width: 100%; padding: 1.2rem;">
+                        <i class="fas fa-lock"></i> Ativar Agora - €97/mês
+                    </button>
+                    
+                    <p class="money-back" style="text-align: center; margin-top: 1rem;">
+                        <i class="fas fa-shield-alt"></i> Garantia de 7 dias - cancelamento fácil
+                    </p>
+                </form>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #999;">
+                Ao registar-se concorda com a partilha de dados conforme a <a href="#" style="color: var(--primary);">Política de Privacidade</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER ATUALIZADO -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Imóvel<span>Direto</span></div>
+                    <p style="margin: 1.2rem 0; color: #bbdbdf;">Compramos o seu imóvel diretamente, sem intermediários, com total transparência e pagamento rápido garantido.</p>
+                    <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; color: #8ecbd1;">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4 style="color: white; margin-bottom: 1.4rem;">Contactos</h4>
+                    <p><i class="fas fa-map-pin"></i> Av. da República, 35 — 2º Dto.<br>2710-405 Sintra, Portugal</p>
+                    <p style="margin-top: 1rem;"><i class="fas fa-phone-alt"></i> +351 214 567 890</p>
+                    <p><i class="fas fa-envelope"></i> contacto@imoveisdireto.pt</p>
+                    <p><i class="far fa-clock"></i> Seg–Sex: 9h–18h · Sáb: 10h–14h</p>
+                </div>
+                <div class="footer-links">
+                    <h4 style="color: white; margin-bottom: 1.4rem;">Links Rápidos</h4>
+                    <a href="#">Oportunidades</a>
+                    <a href="#">Zonas de Atuação</a>
+                    <a href="#formulario">Vender Imóvel</a>
+                    <a href="#" id="footerInvestorLink">Área Investidor</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos e Condições</a>
+                </div>
+                <div class="footer-cta-box">
+                    <h4 style="color: white;">Para Investidores</h4>
+                    <p style="color: #cde1e5; margin: 1rem 0;">Acesso a leads exclusivas de vendedores urgentes. Fee única de €97/mês.</p>
+                    <button class="btn btn-investor-gold" id="footerInvestorBtn" style="font-weight: 700; border: none; cursor: pointer;">
+                        <i class="fas fa-crown"></i> Área Exclusiva
+                    </button>
+                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">👥 127 investidores ativos</p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 ImóvelDireto. Todos os direitos reservados. | <a href="#" style="color: #8eb5bc;">Termos</a> | <a href="#" style="color: #8eb5bc;">Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WATERMARK -->
+    <div class="watermark" aria-hidden="true">
+        ImóvelDireto
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        (function() {
+            // Upload de ficheiros
+            const uploadArea = document.getElementById('file-upload-area');
+            const fileInput = document.getElementById('file-upload');
+            const fileNameSpan = document.getElementById('file-name');
+            const uploadText = document.getElementById('file-upload-text');
+
+            if (uploadArea && fileInput) {
+                uploadArea.addEventListener('click', function(e) {
+                    fileInput.click();
+                });
+
+                fileInput.addEventListener('change', function(e) {
+                    if (fileInput.files.length > 0) {
+                        let names = [];
+                        for (let i = 0; i < fileInput.files.length; i++) {
+                            names.push(fileInput.files[i].name);
+                        }
+                        fileNameSpan.textContent = names.join(', ');
+                        uploadText.textContent = 'Ficheiros selecionados:';
+                    } else {
+                        fileNameSpan.textContent = '';
+                        uploadText.textContent = 'Clique para selecionar ficheiros';
+                    }
+                });
+            }
+
+            // Menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // MODAL INVESTIDOR
+            const modal = document.getElementById('investorModal');
+            const investorBtn = document.getElementById('investorBtn');
+            const footerInvestorBtn = document.getElementById('footerInvestorBtn');
+            const footerInvestorLink = document.getElementById('footerInvestorLink');
+            const closeModal = document.getElementById('closeModal');
+            
+            function openModal(e) {
+                e.preventDefault();
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            if (investorBtn) investorBtn.addEventListener('click', openModal);
+            if (footerInvestorBtn) footerInvestorBtn.addEventListener('click', openModal);
+            if (footerInvestorLink) footerInvestorLink.addEventListener('click', openModal);
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Tabs do modal
+            const tabs = document.querySelectorAll('.modal-tab');
+            const forms = {
+                login: document.getElementById('loginForm'),
+                register: document.getElementById('registerForm')
+            };
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabName = this.dataset.tab;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    Object.values(forms).forEach(form => {
+                        if (form) form.classList.remove('active');
+                    });
+                    
+                    if (forms[tabName]) {
+                        forms[tabName].classList.add('active');
+                    }
+                });
+            });
+            
+            // Scroll suave para seções
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+    
+    <!-- NOVO: Link para a área de investidores no header (mobile) -->
+    <style>
+        @media (max-width: 800px) {
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 100;
+                border-radius: 0 0 30px 30px;
+            }
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>
